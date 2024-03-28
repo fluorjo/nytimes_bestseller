@@ -10,3 +10,5 @@ GET the books inside of a list named: 'hardcover-fiction(하드커버 픽션)': 
 책 사진 위에 랭킹
 
 ![alt text](image-1.png)
+
+업데이트 날짜 표시. 최신 업데이트 정렬. 이름 순서/ 최신 업데이트 순서 정렬 필터.
