@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { API_URL } from "../app/(home)/page";
-
+import Book from "./book";
+import styles from "../styles/bookInfo.module.css"
 async function getBook(category: string) {
   const response = await fetch(`${API_URL}/list?name=${category}`);
   return response.json();
@@ -8,11 +8,15 @@ async function getBook(category: string) {
 
 export default async function BookInfo({ category }: { category: string }) {
   const books = await getBook(category);
-  return  <div>
-    {books.results.books.map((book) => (
-      <li key={book.rank}>
-        <Link href={`/books/${book.rank}`}>{book.title}</Link>
-      </li>
-    ))}
-  </div>
+  return (
+    <div className={styles.container}>
+      {books.results.books.map((book) => (
+        <Book
+          title={book.title}
+          primary_isbn13={book.primary_isbn13}
+          book_image={book.book_image}
+        />
+      ))}
+    </div>
+  );
 }
