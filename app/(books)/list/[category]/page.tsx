@@ -1,13 +1,6 @@
 import { Suspense } from "react";
 import BookInfo from "../../../../components/book-info";
 
-// export async function generateMetadata({ params: { id } }: IParams) {
-//   const movie = await getMovie(id);
-//   return {
-//     title: movie.title,
-//   };
-// }
-
 export default async function BookList({
   params: { category },
 }: {
@@ -15,7 +8,7 @@ export default async function BookList({
 }) {
   return (
     <div>
-      <h3>Book List Page</h3>
+      <h3>category: {category}</h3>
       <Suspense fallback={<h1>Loading book info</h1>}>
         <BookInfo category={category} />
       </Suspense>
