@@ -1,12 +1,13 @@
+import "../styles/global.css";
 import { Metadata } from "next";
 import Navigation from "../components/navigation";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Next Movies",
-    default: "Next Movies",
+    template: "%s | NY Times Bestsellers",
+    default: "NY Times Bestsellers",
   },
-  description: "The best movies on the best framework",
+  description: "NY Times Bestsellers",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
