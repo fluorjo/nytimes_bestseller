@@ -14,20 +14,16 @@
 
 }
 
-.flex_column{
-  display: flex;
-  flex-direction: column;
+.margin{
+margin-top: 44px;
 }
-
-.h2Container{
-  display: flex;
-}
-.h2Container h2 {
+.divided_container h2 {
   position: absolute;
   left: 50%;
-  top: -7%;
+  
   transform: translate(-50%, 0%);
-  font-size: 30px;
+  font-size: 38px;
+  z-index: 100;
 }
 
 .divided_container_li {
