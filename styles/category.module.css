@@ -7,8 +7,6 @@
   top: 20px;
   /* border-radius: 50px; */
   display: flex;
-
-  
 }
 .container h2 {
   position: absolute;
@@ -17,7 +15,7 @@
   font-size: 30px;
 }
 
-.container li {
+.divided_container_li {
   list-style: none;
   transform: none;
   font-size: 30px;
@@ -30,6 +28,12 @@
   border-radius: 10px;
   border: 1px solid #575757;
   background-color: transparent;
+}
+
+.divided_container_li:hover{
+  background-color: #575757;
+  color: #d5d3cd;
+  transform: scale(1.02);
 }
 
 .divided_container::-webkit-scrollbar {
@@ -60,11 +64,7 @@
   padding-left: 7px;
 }
 
-.divided_container  :hover {
-  background-color: #575757;
-  color: #d5d3cd;
-  transform: scale(1.02);
-}
+
 
 .divided_container:hover::-webkit-scrollbar-thumb {
   background: #5757575b;
@@ -75,5 +75,5 @@
 }
 
 .dummy {
-margin-top: 40px;
+  margin-top: 40px;
 }

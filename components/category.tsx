@@ -14,23 +14,25 @@ export default async function Category() {
           .filter((l) => l.updated === "WEEKLY")
           .map((l) => (
             <li
-              key={l.display_name}
+              key={l.list_name_encoded}
               onClick={() => router.push(`/list/${l.list_name_encoded}`)}
               style={{ cursor: "pointer" }}
+              className={styles.divided_container_li}
+
             >
               {l.display_name}
             </li>
           ))}
       </div>
       <div className={styles.divided_container}>
-
         {categoryList.results
           .filter((l) => l.updated === "MONTHLY")
           .map((l) => (
             <li
-              key={l.display_name}
+              key={l.list_name_encoded}
               onClick={() => router.push(`/list/${l.list_name_encoded}`)}
               style={{ cursor: "pointer" }}
+              className={styles.divided_container_li}
             >
               {l.display_name}
             </li>
