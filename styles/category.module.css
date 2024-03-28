@@ -1,0 +1,27 @@
+.container {
+  background-color: blue;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  top: 20px;
+  border-radius: 50px;
+  padding: 20px 0px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+/* .container ul {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+} */
+
+.container li {
+  list-style: none;
+  transform: none;
+  transition: all 0.1s ease-in-out;
+}
+
+/* .container li:hover {
+  transform: scale(1.05);
+} */

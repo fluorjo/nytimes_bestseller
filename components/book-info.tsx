@@ -1,4 +1,4 @@
-import { API_URL } from "../app/(home)/page";
+import { API_URL } from "../api";
 import Book from "./book";
 import styles from "../styles/bookInfo.module.css"
 async function getBook(category: string) {

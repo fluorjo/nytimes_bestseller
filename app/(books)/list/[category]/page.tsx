@@ -1,6 +1,13 @@
 import { Suspense } from "react";
 import BookInfo from "../../../../components/book-info";
 
+// export async function generateMetadata({ params: { id } }: IParams) {
+//   const movie = await getMovie(id);
+//   return {
+//     title: movie.title,
+//   };
+// }
+
 export default async function BookList({
   params: { category },
 }: {
