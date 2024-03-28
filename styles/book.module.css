@@ -24,3 +24,8 @@
   .book a {
     text-align: center;
   }
+
+  .book h2{
+  color: white;
+  font-size: 15px;
+  }
