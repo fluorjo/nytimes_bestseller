@@ -7,10 +7,21 @@
   top: 20px;
   /* border-radius: 50px; */
   display: flex;
+  flex-direction: row;
 }
-.container h2 {
+
+.flex_column{
+  display: flex;
+  flex-direction: column;
+}
+
+.h2Container{
+  display: flex;
+}
+.h2Container h2 {
   position: absolute;
   left: 50%;
+  top: -7%;
   transform: translate(-50%, 0%);
   font-size: 30px;
 }
@@ -54,7 +65,7 @@
   background-color: #d5d3cd;
   border: #575757 1px solid;
   position: relative;
-  width: 50%;
+  width: 50vw;
   height: 85%;
   /* margin: 0 auto; */
   margin-left: 10px;
@@ -77,3 +88,4 @@
 .dummy {
   margin-top: 40px;
 }
+
