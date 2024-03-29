@@ -27,10 +27,12 @@ export default function Book({
     window.location.href = amazon_product_url;
   };
   return (
-    <div className={styles.book}>
-      <img src={book_image} alt={title} onClick={goDetail} />
+    <div className={styles.bookContainer}>
+      <div className={styles.bookImgBox}>
+        <img src={book_image} alt={title} onClick={goDetail} />
+      </div>
       <Link href={`/books/${primary_isbn13}`}>{title}</Link>
-      <h2>{author}</h2>
+      <h3>{author}</h3>
       <button onClick={goBuyNow}>Buy Now!</button>
     </div>
   );

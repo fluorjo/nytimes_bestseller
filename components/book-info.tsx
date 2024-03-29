@@ -12,6 +12,7 @@ export default async function BookInfo({ category }: { category: string }) {
     <div className={styles.container}>
       {books.results.books.map((book) => (
         <Book
+          key={book.primary_isbn13}
           title={book.title}
           primary_isbn13={book.primary_isbn13}
           book_image={book.book_image}
