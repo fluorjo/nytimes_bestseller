@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "../styles/book.module.css";
 
@@ -31,9 +30,11 @@ export default function Book({
       <div className={styles.bookImgBox}>
         <img src={book_image} alt={title} onClick={goDetail} />
       </div>
-      <Link href={`/books/${primary_isbn13}`}>{title}</Link>
-      <h3>{author}</h3>
+      <div className={styles.bookInfoBox}>
+        <h2>{title}</h2>
+        <h3>by {author}</h3>
       <button onClick={goBuyNow}>Buy Now!</button>
+      </div>
     </div>
   );
 }
