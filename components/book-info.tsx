@@ -9,7 +9,7 @@ async function getBook(category: string) {
 export default async function BookInfo({ category }: { category: string }) {
   const books = await getBook(category);
   return (
-    <div className={styles.container}>
+    <div className={styles.gridContainer}>
       {books.results.books.map((book) => (
         <Book
           key={book.primary_isbn13}
