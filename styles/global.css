@@ -140,7 +140,6 @@ body {
   /* background-color: #ECEBE8; */
   background-image: url('https://t4.ftcdn.net/jpg/00/91/66/19/360_F_91661937_ZFJIwTJBcAnEQ6SEvOE1KxLOMWUyR4cq.jpg');
   background-size: cover;
-
   color: black;
   font-size: 18px;
 }
@@ -152,4 +151,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+:root {
+  --thick-grey: #575757; 
+  --light-grey: #d5d3cd; 
 }

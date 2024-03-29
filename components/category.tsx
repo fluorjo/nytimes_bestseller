@@ -38,7 +38,8 @@ export default async function Category() {
             .map((l) => (
               <li
                 key={l.list_name_encoded}
-                onClick={() => router.push(`/list/${l.list_name_encoded}`)}
+                onClick={() =>router.push(`/list/${l.list_name_encoded}`)}
+
                 style={{ cursor: "pointer" }}
                 className={styles.divided_container_li}
               >
