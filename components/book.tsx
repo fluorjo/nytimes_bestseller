@@ -28,7 +28,13 @@ export default function Book({
   };
   return (
     <div className={styles.bookContainer}>
-      <GiSevenPointedStar fill="transparent" stroke="black" stroke-width="40" />
+      <GiSevenPointedStar
+        fill="white"
+        stroke="black"
+        strokeWidth="30"
+        size={35}
+        //그라데이션이 필요할지도.
+      />
 
       <div className={styles.bookImgBox}>
         <img src={book_image} alt={title} onClick={goDetail} />

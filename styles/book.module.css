@@ -4,11 +4,20 @@
   gap: 20px;
   cursor: pointer;
   place-items: center;
-  max-width: 250px;
-  min-width: 150px;
+  /* max-width: 250px;
+  min-width: 150px; */
+  width: 250px;
+  height: 378px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.bookContainer svg {
+position: relative;
+top: 60px;
+left: 90px;
+z-index: 50;
 }
 .bookImgBox {
   background-color: transparent;
