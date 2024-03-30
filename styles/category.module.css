@@ -18,10 +18,14 @@
 .divided_container h2 {
   position: absolute;
   left: 50%;
-
   transform: translate(-50%, 0%);
   font-size: 38px;
   z-index: 100;
+  background-color: var(--thick-grey);
+  color: var(--light-grey);
+  border-radius: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .divided_container_li {

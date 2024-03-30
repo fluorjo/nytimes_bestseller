@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import styles from "../styles/book.module.css";
+import { GiSevenPointedStar } from "react-icons/gi";
 
 interface IBookProps {
   title: string;
@@ -27,13 +28,15 @@ export default function Book({
   };
   return (
     <div className={styles.bookContainer}>
+      <GiSevenPointedStar />
+
       <div className={styles.bookImgBox}>
         <img src={book_image} alt={title} onClick={goDetail} />
       </div>
       <div className={styles.bookInfoBox}>
         <h2>{title}</h2>
         <h3>by {author}</h3>
-      <button onClick={goBuyNow}>Buy Now!</button>
+        <button onClick={goBuyNow}>Buy Now!</button>
       </div>
     </div>
   );
