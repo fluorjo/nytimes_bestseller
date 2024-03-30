@@ -8,14 +8,14 @@ export default function Navigation() {
   return (
     <nav className={styles.nav}>
       <ul>
-          <li>
-            <Link href="/">Home</Link> {path === "/" ? "🔥" : ""}
-          </li>
-          <li>
-            <Link href="/about">About Us</Link>
-            {path === "/about" ? "🔥" : ""}
-          </li>
-        </ul>
-      </nav>
-    );
-  }
+        <li>
+          <Link href="/">Home</Link> {path === "/" ? " 📚 " : ""}
+        </li>
+        <li>
+          <Link href="/about">About Us</Link>
+          {path === "/about" ? " 📚 " : ""}
+        </li>
+      </ul>
+    </nav>
+  );
+}
