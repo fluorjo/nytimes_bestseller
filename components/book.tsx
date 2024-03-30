@@ -34,7 +34,6 @@ export default function Book({
       className={styles.iconContainer}
       >
         <GiSevenPointedStar
-          fill="white"
           stroke="black"
           strokeWidth="20"
           size={35}
@@ -43,7 +42,6 @@ export default function Book({
         className={styles.iconText}
         >{rank}</span>
       </div>
-
       <div className={styles.bookImgBox}>
         <img src={book_image} alt={title} onClick={goDetail} />
       </div>
@@ -52,6 +50,7 @@ export default function Book({
         <h3>by {author}</h3>
         <button onClick={goBuyNow}>Buy Now!</button>
       </div>
+      {/* <div className={styles.bookDescription}></div> */}
     </div>
   );
 }
