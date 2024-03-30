@@ -95,8 +95,9 @@
 
 .bookDescription {
   position: absolute;
-
+  top: 0;
+  color: aliceblue;
   background-color: greenyellow;
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 378px;
 }

@@ -13,6 +13,7 @@ interface IBookProps {
   author: string;
   amazon_product_url: string;
   rank: number;
+  description: string;
 }
 
 export default function Book({
@@ -22,6 +23,7 @@ export default function Book({
   author,
   amazon_product_url,
   rank,
+  description,
 }: IBookProps) {
   const router = useRouter();
   const goDetail = () => {
@@ -41,24 +43,29 @@ export default function Book({
         <GiSevenPointedStar stroke="black" strokeWidth="20" size={35} />
         <span className={styles.iconText}>{rank}</span>
       </div>
-      <div className={styles.bookImgBox}>
-        <motion.img
-          src={book_image}
-          alt={title}
-          onClick={goDetail}
-          animate={{
-            rotateY: isHovered ?  '30deg': 0,
-            rotateX: isHovered ? '10deg' : 0,
-          }}
-          transition={{ duration: 0.2 }}
-        />
-      </div>
+      <motion.div
+        className={styles.bookImgBox}
+        animate={{
+          // rotateY: isHovered ? "360deg" : 0,
+          // rotateX: isHovered ? "10deg" : 0,
+        }}
+        transition={{ duration: 0.2 }}
+      >
+        {!isHovered ? (
+          <motion.img
+            src={book_image}
+            alt={title}
+            // onClick={goDetail}
+          />
+        ) : (
+          <div className={styles.bookDescription}>{description}</div>
+        )}
+      </motion.div>
       <div className={styles.bookInfoBox}>
         <h2>{title}</h2>
         <h3>by {author}</h3>
         <button onClick={goBuyNow}>Buy Now!</button>
       </div>
-      {/* <div className={styles.bookDescription}></div> */}
     </div>
   );
 }

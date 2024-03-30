@@ -19,6 +19,7 @@ export default async function BookInfo({ category }: { category: string }) {
           author={book.author}
           amazon_product_url={book.amazon_product_url}
           rank={book.rank}
+          description={book.description}
         />
       ))}
     </div>
