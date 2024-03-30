@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GiSevenPointedStar } from "react-icons/gi";
 import styles from "../styles/book.module.css";
 
@@ -33,33 +33,83 @@ export default function Book({
     window.location.href = amazon_product_url;
   };
   const [isHovered, setIsHovered] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [rotateXaxis, setRotateXaxis] = useState(0);
+  const [rotateYaxis, setRotateYaxis] = useState(0);
+  const ref = useRef(null);
+
+  const spring = {
+    type: "spring",
+    stiffness: 300,
+    damping: 40,
+  };
+  const dx = useSpring(0, spring);
+  const dy = useSpring(0, spring);
+  useEffect(() => {
+    dx.set(-rotateXaxis);
+    dy.set(rotateYaxis);
+  }, [rotateXaxis, rotateYaxis]);
+
   return (
     <div
       className={styles.bookContainer}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
     >
       <div className={styles.iconContainer}>
         <GiSevenPointedStar stroke="black" strokeWidth="20" size={35} />
         <span className={styles.iconText}>{rank}</span>
       </div>
       <motion.div
-        className={styles.bookImgBox}
-        animate={{
-          // rotateY: isHovered ? "360deg" : 0,
-          // rotateX: isHovered ? "10deg" : 0,
+        transition={spring}
+        style={{
+          perspective: "1200px",
+          transformStyle: "preserve-3d",
+          width: `250px`,
+          height: `378px`,
+          // backgroundColor:"blue"
         }}
-        transition={{ duration: 0.2 }}
       >
-        {!isHovered ? (
+        <div
+          style={{
+            perspective: "1200px",
+            transformStyle: "preserve-3d",
+            width: "100%",
+            height: "100%",
+          }}
+        >
           <motion.img
             src={book_image}
             alt={title}
-            // onClick={goDetail}
+            animate={{ rotateY: isFlipped ? -180 : 0 }}
+            // transition={{duration:1}}
+            transition={spring}
+            style={{
+              width: "100%",
+              height: "100%",
+              zIndex: isFlipped ? 0 : 1,
+              backfaceVisibility: "hidden",
+              position: "absolute",
+              left: "0px",
+              // transformOrigin: "left center",
+            }}
           />
-        ) : (
-          <div className={styles.bookDescription}>{description}</div>
-        )}
+          <motion.div
+            initial={{ rotateY: 180 }}
+            animate={{ rotateY: isFlipped ? 0 : 180 }}
+            transition={spring}
+            style={{
+              width: "100%",
+              height: "100%",
+              zIndex: isFlipped ? 1 : 0,
+              backfaceVisibility: "hidden",
+              position: "absolute",
+              // backgroundColor: "red",
+            }}
+          >
+            {description}
+          </motion.div>
+        </div>
       </motion.div>
       <div className={styles.bookInfoBox}>
         <h2>{title}</h2>

@@ -23,3 +23,5 @@
 어떤 카테고리 들어가도 다른 카테고리 페이지 바로 갈 수 있게. 옆에 링크 목록 살아있게.
 
 http://www.colorhunter.com/tag/newspaper/1
+
+https://framer.university/resources/3d-card-flip-override

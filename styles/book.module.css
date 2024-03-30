@@ -32,20 +32,19 @@
 }
 .bookImgBox {
   background-color: transparent;
-  position: relative;
+  /* position: relative;
   width: 100%;
   padding-top: 151%;
-  overflow: hidden;
+  overflow: hidden; */
 }
-.bookContainer img {
+.bookContainerImg {
   position: absolute;
-  top: 0;
+  /* top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  perspective: 400px;
+  border-radius: 10px; */
 }
 
 .bookContainer a {
@@ -94,10 +93,10 @@
 }
 
 .bookDescription {
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* top: 0;
   color: aliceblue;
-  background-color: greenyellow;
+  background-color: black;
   width: 250px;
-  height: 378px;
+  height: 378px; */
 }
