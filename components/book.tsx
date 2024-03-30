@@ -10,6 +10,7 @@ interface IBookProps {
   book_image: string;
   author: string;
   amazon_product_url: string;
+  rank:number
 }
 
 export default function Book({
@@ -18,6 +19,7 @@ export default function Book({
   book_image,
   author,
   amazon_product_url,
+  rank
 }: IBookProps) {
   const router = useRouter();
   const goDetail = () => {
@@ -28,13 +30,19 @@ export default function Book({
   };
   return (
     <div className={styles.bookContainer}>
-      <GiSevenPointedStar
-        fill="white"
-        stroke="black"
-        strokeWidth="30"
-        size={35}
-        //그라데이션이 필요할지도.
-      />
+      <div 
+      className={styles.iconContainer}
+      >
+        <GiSevenPointedStar
+          fill="transparent"
+          stroke="black"
+          strokeWidth="20"
+          size={35}
+        />
+        <span 
+        // className={styles.iconText}
+        >{rank}</span>
+      </div>
 
       <div className={styles.bookImgBox}>
         <img src={book_image} alt={title} onClick={goDetail} />

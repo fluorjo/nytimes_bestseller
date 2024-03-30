@@ -10,13 +10,14 @@
   margin-top: 10px;
   margin-bottom: 170px;
 }
+.iconContainer{
+  position: relative;
+  top: 60px;
+  left: 100px;
+  z-index: 2;
 
-.bookContainer svg {
-position: relative;
-top: 60px;
-left: 90px;
-z-index: 50;
 }
+
 .bookImgBox {
   background-color: transparent;
   position: relative;
