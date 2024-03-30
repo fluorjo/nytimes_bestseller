@@ -8,7 +8,7 @@
   height: 378px;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 170px;
+  margin-bottom: 180px;
 }
 .iconContainer {
   position: relative;
@@ -45,6 +45,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  perspective: 400px;
 }
 
 .bookContainer a {
@@ -94,7 +95,7 @@
 
 .bookDescription {
   position: absolute;
-  
+
   background-color: greenyellow;
   width: 100px;
   height: 100px;
