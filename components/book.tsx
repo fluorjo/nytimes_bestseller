@@ -105,6 +105,9 @@ export default function Book({
               backfaceVisibility: "hidden",
               position: "absolute",
               // backgroundColor: "red",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             {description}
