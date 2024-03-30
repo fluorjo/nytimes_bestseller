@@ -6,7 +6,7 @@ export default function AboutUsLayout({
     return (
       <div>
         {children}
-        &copy; Next JS is great!
+        {/* &copy; Nomad Times */}
       </div>
     );
   }

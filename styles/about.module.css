@@ -1,0 +1,17 @@
+.Introduce {
+  /* background-color: aqua; */
+
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.Introduce h1 {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+.Introduce h2 {
+  font-size: 32px;
+  margin: 24px;
+}
