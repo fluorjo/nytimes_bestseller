@@ -7,15 +7,17 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "../styles/navigation.module.css";
 
 const navVariants = {
-  scrollUp: {
+  visible: {
     opacity: 1,
+    transition:{ duration: 0.1 },
   },
-  scrollDown: {
+  hidden: {
     opacity: 0,
+    transition: { duration: 0.1 },
   },
 };
 
@@ -25,24 +27,15 @@ export default function Navigation() {
   const navAnimation = useAnimation();
   const [prevScrollY, setPrevScrollY] = useState(0);
 
-  useEffect(() => {
-    // return scrollY.onChange(() => {
-
-    return useMotionValueEvent(scrollY, "change", () => {
-      const currentScrollY = scrollY.get();
-
-      // 스크롤이 내려가는 경우
-      if (currentScrollY > prevScrollY) {
-        navAnimation.start("scrollDown");
-      } else {
-        // 스크롤이 올라가거나 멈춰있는 경우
-        navAnimation.start("scrollUp");
-      }
-
-      // 현재 스크롤 위치를 이전 스크롤 위치로 업데이트
-      setPrevScrollY(currentScrollY);
-    });
-  }, [scrollY, prevScrollY, navAnimation]);
+  useMotionValueEvent(scrollY, "change", () => {
+    const currentScrollY = scrollY.get();
+    if (currentScrollY > prevScrollY) {
+      navAnimation.start("hidden");
+    } else {
+      navAnimation.start("visible");
+    }
+    setPrevScrollY(currentScrollY);
+  });
   return (
     <motion.nav
       className={styles.nav}
