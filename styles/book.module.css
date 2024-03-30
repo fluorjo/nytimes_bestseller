@@ -10,14 +10,23 @@
   margin-top: 10px;
   margin-bottom: 170px;
 }
-.iconContainer{
+.iconContainer {
   position: relative;
-  top: 60px;
+  top: 65px;
   left: 100px;
   z-index: 2;
-
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
 }
 
+.iconText {
+  /* background-color: blue; */
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+
+}
 .bookImgBox {
   background-color: transparent;
   position: relative;

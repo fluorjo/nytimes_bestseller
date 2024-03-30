@@ -34,13 +34,13 @@ export default function Book({
       className={styles.iconContainer}
       >
         <GiSevenPointedStar
-          fill="transparent"
+          fill="white"
           stroke="black"
           strokeWidth="20"
           size={35}
         />
         <span 
-        // className={styles.iconText}
+        className={styles.iconText}
         >{rank}</span>
       </div>
 
