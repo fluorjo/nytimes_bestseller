@@ -51,6 +51,12 @@ export default function Navigation() {
           <Link href="/about">About Us</Link>
           {path === "/about" ? " 📚 " : ""}
         </li>
+        {path.startsWith("/list") ?
+        <li>
+          <Link href="">list</Link>
+          {path.startsWith("/list") ? " 📚 " : ""}
+        </li>
+        :""}
       </ul>
     </motion.nav>
   );

@@ -60,17 +60,16 @@
   margin-top: 2px;
   margin-bottom: 2px;
   color: black;
-  font-size: 24px;
+  font-size: 22px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .bookInfoBox h3 {
-  color: black;
   color: var(--thick-grey);
-  font-size: 20px;
-  margin-top: 2px;
+  font-size: 18px;
+  margin-top: 4px;
   margin-bottom: 2px;
   position: relative;
   display: flex;
@@ -81,8 +80,8 @@
 }
 
 .bookInfoBox button {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   width: 200px;
   height: 30px;
   display: block;
