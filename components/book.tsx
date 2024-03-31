@@ -38,7 +38,7 @@ const iconContainerVariants = {
 const bookVariants = {
   flipped: {
     rotateY: -180,
-    transition: { duration: 0.8 },
+    transition: { duration: 0.8,delay:0.2 },
   },
   notFlipped: {
     rotateY: 0,
@@ -46,7 +46,7 @@ const bookVariants = {
   },
 };
 const descriptionVariants = {
-  visible: { opacity: 1, transition: { duration: 0.1 } },
+  visible: { opacity: 1, transition: { duration: 0.1 ,delay:0.2 } },
   hidden: { opacity: 0, transition: { duration: 0.1 } },
 };
 
