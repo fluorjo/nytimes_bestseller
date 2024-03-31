@@ -32,8 +32,8 @@ function getStarIcon(rank) {
 }
 
 const iconContainerVariants = {
-  hovered: { translateY: `-60px`, transition: { duration: 0.2 } },
-  notHovered: { translateY: 0, transition: { duration: 0.2 } },
+  hovered: { opacity: 0, transition: { duration: 0.2 } },
+  notHovered: { opacity: 1, transition: { duration: 2 } },
 };
 const bookVariants = {
   flipped: {
@@ -42,7 +42,7 @@ const bookVariants = {
   },
   notFlipped: {
     rotateY: 0,
-    transition: { duration: 0.4 },
+    transition: { duration: 0.4 , when:"beforeChildren"},
   },
 };
 const descriptionVariants = {
@@ -102,14 +102,14 @@ export default function Book({
             className={styles.iconContainer}
             variants={iconContainerVariants}
             animate={isFlipped ? "hovered" : "notHovered"}
-            // style={{
-            //   zIndex: !isFlipped ? 2 : 2,
-            // }}
+            style={{
+              zIndex: isFlipped ? 0 : 2,
+              backfaceVisibility: "hidden",
+            }}
           >
             {StarIcon}
             <span className={styles.iconText}>{rank}</span>
           </motion.div>
-
           <motion.img
             src={book_image}
             alt={title}
