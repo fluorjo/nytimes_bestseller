@@ -153,7 +153,7 @@ export default function Book({
       <div className={styles.bookInfoBox}>
         <h2>{title}</h2>
         <h3>by {author}</h3>
-        <button className={styles.BuyButton} onClick={handleButtonClick}>
+        <button className={buttonClicked ?`${styles.BuyButton} ${styles.BuyButtonClicked}` :styles.BuyButton} onClick={handleButtonClick}>
           {buttonClicked ? "Select Bookshop" : "Buy ↓"}
         </button>
         <AnimatePresence>

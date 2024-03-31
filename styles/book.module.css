@@ -109,6 +109,10 @@
   box-shadow: 0cqw 4px black;
 }
 
+.BuyButtonClicked{
+  color: white;
+  background-color: var(--sand);
+}
 .bookDescription {
   position: absolute;
 
