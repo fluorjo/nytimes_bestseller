@@ -32,10 +32,7 @@ export default function Book({
   const goBuyNow = () => {
     window.location.href = amazon_product_url;
   };
-  const [isHovered, setIsHovered] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
-  const [rotateXaxis, setRotateXaxis] = useState(0);
-  const [rotateYaxis, setRotateYaxis] = useState(0);
   const ref = useRef(null);
 
   const spring = {
@@ -43,13 +40,20 @@ export default function Book({
     stiffness: 300,
     damping: 40,
   };
-  const dx = useSpring(0, spring);
-  const dy = useSpring(0, spring);
-  useEffect(() => {
-    dx.set(-rotateXaxis);
-    dy.set(rotateYaxis);
-  }, [rotateXaxis, rotateYaxis]);
 
+  const flipVariants = {
+    initial: {
+      opacity: 1
+    },
+    animate: { 
+      rotateY: isFlipped ? -180 : 0,
+      transition: { duration: 1 }
+    },
+    exit: {
+      transition: { duration: 0.2 }
+    }
+  }
+  
   return (
     <div
       className={styles.bookContainer}
@@ -91,8 +95,7 @@ export default function Book({
             src={book_image}
             alt={title}
             animate={{ rotateY: isFlipped ? -180 : 0 }}
-            // transition={{duration:1}}
-            transition={spring}
+            transition={{duration:0.8} }
             style={{
               width: "100%",
               height: "100%",
@@ -100,28 +103,35 @@ export default function Book({
               backfaceVisibility: "hidden",
               position: "absolute",
               left: "0px",
-              // borderRadius:"2.5%",
               borderTopLeftRadius: "3.5%",
               borderTopRightRadius: "0%",
               borderBottomLeftRadius: "3.5%",
               borderBottomRightRadius: "0%",
-              // transformOrigin: "left center",
+              transformOrigin: "left center",
             }}
           />
           <motion.div
-            initial={{ rotateY: 180 }}
-            animate={{ rotateY: isFlipped ? 0 : 180 }}
-            transition={spring}
+            // initial={{ rotateY: 180 }}
+            // animate={{ rotateY: isFlipped ? 0 : 0 }}
+            // transition={spring}
             style={{
               width: "100%",
               height: "100%",
               zIndex: isFlipped ? 1 : 0,
               backfaceVisibility: "hidden",
               position: "absolute",
-              // backgroundColor: "red",
+              backgroundColor: "#ededed",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              fontSize:"26px",
+              lineHeight:"32px",
+              borderTopLeftRadius: "3.5%",
+              borderTopRightRadius: "0%",
+              borderBottomLeftRadius: "3.5%",
+              borderBottomRightRadius: "0%",
+              padding:"0px 0px 5px 5px"
+              
             }}
           >
             {description}
