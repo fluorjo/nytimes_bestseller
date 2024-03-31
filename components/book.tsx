@@ -67,17 +67,16 @@ export default function Book({
           <motion.div
             className={styles.iconContainer}
             initial={{ opacity: 1 }}
-            animate={{ rotateY: isFlipped ? -180 : 0 }}
+            animate={{ translateY: isFlipped ? `-60px` :  0}}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.2}}
             style={{
-              zIndex: !isFlipped ? 2 : 0,
+              zIndex: !isFlipped ? 2 : 2,
             }}
           >
             <GiSevenPointedStar stroke="black" strokeWidth="20" size={45} />
             <span className={styles.iconText}>{rank}</span>
           </motion.div>
-          :
           <motion.img
             src={book_image}
             alt={title}
