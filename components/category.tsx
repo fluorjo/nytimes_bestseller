@@ -6,7 +6,7 @@ import getCategory from "../api";
 
 import styles from "../styles/category.module.css";
 
-export default  function Category() {
+export default function Category() {
   const router = useRouter();
   const [categoryList, setCategoryList] = useState({ results: [] });
 
@@ -39,7 +39,7 @@ export default  function Category() {
         </div>
       </div>
       <div className={styles.divided_container}>
-      <div>
+        <div>
           <h2>MONTHLY</h2>
         </div>
         <div className={styles.margin}>
@@ -48,9 +48,7 @@ export default  function Category() {
             .map((l) => (
               <li
                 key={l.list_name_encoded}
-                onClick={() =>router.push(`/list/${l.list_name_encoded}`)}
-                // onClick={() =>console.log('22222')}
-
+                onClick={() => router.push(`/list/${l.list_name_encoded}`)}
                 style={{ cursor: "pointer" }}
                 className={styles.divided_container_li}
               >
