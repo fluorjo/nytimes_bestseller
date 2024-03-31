@@ -50,7 +50,7 @@ export default function Book({
           height: `378px`,
           // backgroundColor: "blue",
           boxShadow:
-            " 9px 8px 4px 1px rgb(255, 255, 255), 9px 8px 4px 2px rgb(205, 205, 205), 9px 8px 4px 3px rgb(155, 155, 155), 9px 8px 4px 4px rgb(105, 105, 105), 9px 8px 4px 5px rgb(55, 55, 55), 9px 8px 4px 6px rgb(0, 0, 0)",
+            " 9px 8px 4px 1px rgb(245, 245, 245), 9px 8px 4px 2px rgb(205, 205, 205), 9px 8px 4px 3px rgb(155, 155, 155), 9px 8px 4px 4px rgb(105, 105, 105), 9px 8px 4px 5px rgb(55, 55, 55), 9px 8px 4px 6px rgb(0, 0, 0)",
         }}
       >
         <div
@@ -64,17 +64,27 @@ export default function Book({
               "inset 20px 0px 21px -10px rgba(255,255,255,.1), inset 13px 0px 21px -10px rgba(0,0,0,.3)",
           }}
         >
-          <div className={styles.iconContainer}>
+          <motion.div
+            className={styles.iconContainer}
+            initial={{ opacity: 1 }}
+            animate={{ rotateY: isFlipped ? -180 : 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{
+              zIndex: !isFlipped ? 2 : 0,
+            }}
+          >
             <GiSevenPointedStar stroke="black" strokeWidth="20" size={45} />
             <span className={styles.iconText}>{rank}</span>
-          </div>
+          </motion.div>
+          :
           <motion.img
             src={book_image}
             alt={title}
             initial={{ opacity: 1 }}
             animate={{ rotateY: isFlipped ? -180 : 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             style={{
               width: "100%",
               height: "100%",
