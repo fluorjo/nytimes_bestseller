@@ -31,6 +31,11 @@ function getStarIcon(rank) {
   }
 }
 
+const iconContainerVariants = {
+  hovered: { translateY: `-60px`, transition: { duration: 0.2 } },
+  notHovered: { translateY: 0, transition: { duration: 0.2 } },
+};
+
 export default function Book({
   title,
   primary_isbn13,
@@ -41,10 +46,6 @@ export default function Book({
   description,
   buy_links,
 }: IBookProps) {
-  // const router = useRouter();
-  // const goDetail = () => {
-  //   router.push(`/books/${primary_isbn13}`);
-  // };
   const goBuyNow = () => {
     window.location.href = amazon_product_url;
   };
@@ -68,7 +69,6 @@ export default function Book({
           transformStyle: "preserve-3d",
           width: `250px`,
           height: `378px`,
-          // backgroundColor: "blue",
           boxShadow:
             " 9px 8px 4px 1px rgb(245, 245, 245), 9px 8px 4px 2px rgb(205, 205, 205), 9px 8px 4px 3px rgb(155, 155, 155), 9px 8px 4px 4px rgb(105, 105, 105), 9px 8px 4px 5px rgb(55, 55, 55), 9px 8px 4px 6px rgb(0, 0, 0)",
         }}
@@ -86,13 +86,11 @@ export default function Book({
         >
           <motion.div
             className={styles.iconContainer}
-            initial={{ opacity: 1 }}
-            animate={{ translateY: isFlipped ? `-60px` : 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            style={{
-              zIndex: !isFlipped ? 2 : 2,
-            }}
+            variants={iconContainerVariants}
+            animate={isFlipped ? "hovered" : "notHovered"}
+            // style={{
+            //   zIndex: !isFlipped ? 2 : 2,
+            // }}
           >
             {StarIcon}
             <span className={styles.iconText}>{rank}</span>
