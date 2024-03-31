@@ -123,6 +123,13 @@ table {
   border-spacing: 0;
 }
 
+
+:root {
+  --main-background:#C6C4BE;
+  --thick-grey: #7B7974; 
+  --light-grey: #FAF9F4; 
+}
+
 body {
     padding-top: 150px;
   font-family:
@@ -137,8 +144,8 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  /* background-color: #ECEBE8; */
-  background-image: url('https://t4.ftcdn.net/jpg/00/91/66/19/360_F_91661937_ZFJIwTJBcAnEQ6SEvOE1KxLOMWUyR4cq.jpg');
+  background-color: var(--main-background);
+  /* background-image: url('https://t4.ftcdn.net/jpg/00/91/66/19/360_F_91661937_ZFJIwTJBcAnEQ6SEvOE1KxLOMWUyR4cq.jpg'); */
   background-size: cover;
   color: black;
   font-size: 18px;
@@ -151,9 +158,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-:root {
-  --thick-grey: #575757; 
-  --light-grey: #d5d3cd; 
 }

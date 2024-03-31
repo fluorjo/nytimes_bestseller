@@ -56,18 +56,16 @@ export default function Book({
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
-      <div className={styles.iconContainer}>
-        <GiSevenPointedStar stroke="black" strokeWidth="20" size={35} />
-        <span className={styles.iconText}>{rank}</span>
-      </div>
       <motion.div
         transition={spring}
         style={{
+          position: "relative",
+          top: "px",
           perspective: "1200px",
           transformStyle: "preserve-3d",
           width: `250px`,
           height: `378px`,
-          // backgroundColor:"blue"
+          // backgroundColor: "blue",
         }}
       >
         <div
@@ -78,6 +76,11 @@ export default function Book({
             height: "100%",
           }}
         >
+          {" "}
+          <div className={styles.iconContainer}>
+            <GiSevenPointedStar stroke="black" strokeWidth="20" size={45} />
+            <span className={styles.iconText}>{rank}</span>
+          </div>
           <motion.img
             src={book_image}
             alt={title}

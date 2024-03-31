@@ -1,20 +1,21 @@
 .bookContainer {
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 20px;
   cursor: pointer;
   place-items: center;
   width: 250px;
   height: 378px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 180px;
+
+
 }
 .iconContainer {
-  position: relative;
-  top: 65px;
-  left: 100px;
-  z-index: 4;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 99;
   /* background-color: red; */
   display: flex;
   justify-content: center;
@@ -56,27 +57,30 @@
   height: 100px;
   display: grid;
   align-items: center;
+  /* background-color: blue; */
+  /* z-index: 22; */
+  padding-top: 0px;
 }
 .bookInfoBox h2 {
   word-wrap: break-word;
   position: relative;
-  margin-top: 2px;
-  margin-bottom: 2px;
   color: black;
-  font-size: 22px;
-  height: 60px;
+  font-size: 21px;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: red; */
+  overflow: scroll
 }
 .bookInfoBox h3 {
   color: var(--thick-grey);
-  font-size: 18px;
+  font-size: 19px;
   margin-top: 4px;
   margin-bottom: 2px;
   position: relative;
   display: flex;
-  height: 30px;
+  height: 50px;
 
   justify-content: center;
   align-items: center;
@@ -93,7 +97,8 @@
 }
 
 .bookDescription {
-  /* position: absolute; */
+  position: absolute;
+
   /* top: 0;
   color: aliceblue;
   background-color: black;

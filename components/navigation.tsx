@@ -45,16 +45,16 @@ export default function Navigation() {
     >
       <ul>
         <li>
-          <Link href="/">Home</Link> {path === "/" ? " 📚 " : ""}
+          <Link href="/">Home</Link> {path === "/" ? " 📕 " : ""}
         </li>
         <li>
           <Link href="/about">About Us</Link>
-          {path === "/about" ? " 📚 " : ""}
+          {path === "/about" ? " 📕 " : ""}
         </li>
         {path.startsWith("/list") ?
         <li>
           <Link href="">list</Link>
-          {path.startsWith("/list") ? " 📚 " : ""}
+          {path.startsWith("/list") ? " 📕 " : ""}
         </li>
         :""}
       </ul>
