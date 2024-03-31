@@ -37,10 +37,10 @@ export default function Book({
   rank,
   description,
 }: IBookProps) {
-  const router = useRouter();
-  const goDetail = () => {
-    router.push(`/books/${primary_isbn13}`);
-  };
+  // const router = useRouter();
+  // const goDetail = () => {
+  //   router.push(`/books/${primary_isbn13}`);
+  // };
   const goBuyNow = () => {
     window.location.href = amazon_product_url;
   };

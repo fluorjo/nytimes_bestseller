@@ -102,24 +102,42 @@
   font-size: 80px;
   color: black;
   font-family: "Chomsky";
-
   margin-top: 20px;
 }
 
+
+
+.categoryName {
+  font-size: 48px;
+  margin-left: 40px;
+  position: relative;
+  color: var(--thick-brown);
+  font-size: 78px;
+  font-weight: 600;
+}
+
 @media (max-width: 1260px) {
-  .title {
+  .title{
+    font-size: 60px;
+  }
+  .categoryName{
     font-size: 60px;
   }
 }
 @media (max-width: 950px) {
-  .title {
+  .title{
     font-size: 40px;
     top: 100px;
   }
+  .categoryName{
+    font-size: 50px;
+  }
 }
 @media (max-width: 630px) {
-  .title {
+  .title{
     opacity: 0;
-
+  }
+  .categoryName{
+    font-size: 40px;
   }
 }
