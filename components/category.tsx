@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import getCategory from "../api";
 
 import styles from "../styles/category.module.css";
-// import { chomsky } from 'next/font/google'; 
 import "../public/static/fonts/style.css";
 
 export default function Category() {
