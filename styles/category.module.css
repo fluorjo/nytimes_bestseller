@@ -70,13 +70,14 @@
 
 .divided_container {
   background-color: var(--light-grey);
+  background-color: #fcfcfc;
   border: var(--thick-grey) 1px solid;
   position: relative;
   width: 50vw;
   height: 85vh;
   /* margin: 0 auto; */
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 1px;
+  margin-right: 1px;
   margin-top: 40px;
   border-radius: 15px;
   overflow-y: scroll;
@@ -84,6 +85,22 @@
   min-width: 200px;
   max-width: 700px;
   
+}
+.divided_container_left{
+  border-right: 8px solid black;
+  box-shadow: inset -30px 0px 30px rgba(0, 0, 0, 0.4); 
+  border-top-right-radius: 2%;
+  border-bottom-right-radius: 2%;
+
+}
+
+.divided_container_right{
+  border-left: 8px solid black;
+  box-shadow: inset 30px 0px 30px rgba(0, 0, 0, 0.4); 
+  border-top-left-radius: 2%;
+  border-bottom-left-radius: 2%;
+
+
 }
 
 .divided_container:hover::-webkit-scrollbar-thumb {

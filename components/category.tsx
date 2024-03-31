@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 import getCategory from "../api";
 
-import styles from "../styles/category.module.css";
 import "../public/static/fonts/style.css";
+import styles from "../styles/category.module.css";
 
 export default function Category() {
   const router = useRouter();
@@ -20,9 +20,11 @@ export default function Category() {
   }, []);
   return (
     <>
-      <h1 className={styles.title} >The Nomad Times</h1>
+      <h1 className={styles.title}>The Nomad Times</h1>
       <div className={styles.container}>
-        <div className={styles.divided_container}>
+        <div
+          className={`${styles.divided_container} ${styles.divided_container_left}`}
+        >
           <div>
             <h2>WEEKLY</h2>
           </div>
@@ -41,7 +43,9 @@ export default function Category() {
               ))}
           </div>
         </div>
-        <div className={styles.divided_container}>
+        <div
+          className={`${styles.divided_container} ${styles.divided_container_right}`}
+        >
           <div>
             <h2>MONTHLY</h2>
           </div>
