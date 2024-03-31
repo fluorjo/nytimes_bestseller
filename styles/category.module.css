@@ -80,7 +80,7 @@
 }
 
 .divided_container:hover::-webkit-scrollbar-thumb {
-  background: #5757575b;
+  background: var(--thick-brown);
 }
 
 .divided_container a {
