@@ -88,7 +88,7 @@
 }
 .divided_container_left{
   border-right: 8px solid black;
-  box-shadow: inset -30px 0px 30px rgba(0, 0, 0, 0.4); 
+  box-shadow: -5px -5px 10px white, inset -30px 0px 30px rgba(0, 0, 0, 0.4); 
   /* border-top-right-radius: 6%;
   border-bottom-right-radius: 7%; */
   border-radius: 31% 32% 19% 1% / 2% 4% 5% 10% ;
@@ -98,10 +98,10 @@
 
 .divided_container_right{
   border-left: 8px solid black;
-  box-shadow: inset 30px 0px 30px rgba(0, 0, 0, 0.4); 
+  box-shadow:  5px -5px 10px white, inset 30px 0px 30px rgba(0, 0, 0, 0.4); 
   /* border-top-left-radius: 2%;
   border-bottom-left-radius: 2%; */
-border-radius: 30% 41% 29% 31% / 4% 2% 0% 5% ;
+border-radius: 30% 41% 29% 31% / 4% 2% 3% 5% ;
 transform: skewY(-3deg) skewX(0deg) ;
 
 }
