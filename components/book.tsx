@@ -66,6 +66,9 @@ export default function Book({
           width: `250px`,
           height: `378px`,
           // backgroundColor: "blue",
+          boxShadow:
+            " 5px 8px 3px 1px rgb(255, 255, 255), 5px 8px 3px 2px rgb(235, 235, 235), 5px 8px 3px 3px rgb(215, 215, 215), 5px 8px 3px 4px rgb(195, 195, 195), 5px 8px 3px 5px rgb(175, 175, 175), 5px 8px 3px 6px rgb(155, 155, 155)",
+          
         }}
       >
         <div
@@ -74,6 +77,9 @@ export default function Book({
             transformStyle: "preserve-3d",
             width: "100%",
             height: "100%",
+
+            boxShadow:
+              "inset 20px 0px 21px -10px rgba(255,255,255,.1), inset 13px 0px 21px -10px rgba(0,0,0,.3)",
           }}
         >
           {" "}
@@ -94,6 +100,11 @@ export default function Book({
               backfaceVisibility: "hidden",
               position: "absolute",
               left: "0px",
+              // borderRadius:"2.5%",
+              borderTopLeftRadius: "3.5%",
+              borderTopRightRadius: "0%",
+              borderBottomLeftRadius: "3.5%",
+              borderBottomRightRadius: "0%",
               // transformOrigin: "left center",
             }}
           />
