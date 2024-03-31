@@ -119,10 +119,17 @@
   height: 378px; */
 }
 
-.shopList{
-background-color: red;
-width: 200px;
-height: 200px;
-z-index: 10;
-color: white;
+.shopList {
+  width: 105%;
+  background-color: var(--sand);
+  height: 200px;
+  z-index: 10;
+  color: white;
+}
+.shopList ul{
+  margin-top: 10px;
+}
+.shopList li{
+  margin-top: 5px;
+  font-size: 24px;
 }

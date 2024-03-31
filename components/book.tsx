@@ -16,7 +16,7 @@ interface IBookProps {
   amazon_product_url: string;
   rank: number;
   description: string;
-  buy_links: IBuyLink[]; 
+  buy_links: IBuyLink[];
 }
 function getStarIcon(rank) {
   switch (rank) {
@@ -156,15 +156,15 @@ export default function Book({
         </button>
         {buttonClicked && (
           <div className={styles.shopList}>
-         <ul>
-        {buy_links?.map((link, index) => (
-          <li key={index}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
+            <ul>
+              {buy_links?.map((link, index) => (
+                <li key={index}>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>
