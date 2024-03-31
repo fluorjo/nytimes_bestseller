@@ -24,9 +24,12 @@
   z-index: 100;
   /* background-color: var(--thick-grey); */
   color: var(--light-brown);
+  color: var(--sand);
   border-radius: 10px;
   padding-left: 0px;
   padding-right: 0px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+
 }
 
 .divided_container_li {
@@ -80,6 +83,7 @@
   padding-left: 7px;
   min-width: 200px;
   max-width: 700px;
+  
 }
 
 .divided_container:hover::-webkit-scrollbar-thumb {
@@ -111,9 +115,11 @@
   font-size: 48px;
   margin-left: 40px;
   position: relative;
-  color: var(--thick-brown);
+  color: var(--sand);
   font-size: 78px;
   font-weight: 600;
+  font-family: Georgia, "Times New Roman", Times, serif;
+
 }
 
 @media (max-width: 1260px) {
