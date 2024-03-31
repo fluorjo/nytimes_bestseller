@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
 import styles from "../styles/book.module.css";
 import { BronzeIcon, DefaultIcon, GoldIcon, SilverIcon } from "./Icons/star";
 interface IBuyLink {
@@ -42,7 +42,7 @@ const bookVariants = {
   },
   notFlipped: {
     rotateY: 0,
-    transition: { duration: 0.4 , when:"beforeChildren"},
+    transition: { duration: 0.4, when: "beforeChildren" },
   },
 };
 const descriptionVariants = {
@@ -52,23 +52,20 @@ const descriptionVariants = {
 
 export default function Book({
   title,
-  primary_isbn13,
   book_image,
   author,
-  amazon_product_url,
   rank,
   description,
   buy_links,
 }: IBookProps) {
-  const goBuyNow = () => {
-    window.location.href = amazon_product_url;
-  };
+
   const [isFlipped, setIsFlipped] = useState(false);
   const StarIcon = getStarIcon(rank);
   const [buttonClicked, setButtonClicked] = useState(false);
   const handleButtonClick = () => {
     setButtonClicked(!buttonClicked);
   };
+
   return (
     <div
       className={styles.bookContainer}
@@ -101,7 +98,6 @@ export default function Book({
           <motion.div
             className={styles.iconContainer}
             variants={iconContainerVariants}
-            animate={isFlipped ? "hovered" : "notHovered"}
             style={{
               zIndex: isFlipped ? 0 : 2,
               backfaceVisibility: "hidden",
@@ -115,6 +111,7 @@ export default function Book({
             alt={title}
             variants={bookVariants}
             animate={isFlipped ? "flipped" : "notFlipped"}
+            initial={{ opacity: 1 }}
             style={{
               width: "100%",
               height: "100%",
@@ -131,8 +128,8 @@ export default function Book({
             }}
           />
           <motion.div
-          variants={descriptionVariants}
-          animate={isFlipped ? "visible" : "hidden"}
+            variants={descriptionVariants}
+            animate={isFlipped ? "visible" : "hidden"}
             style={{
               width: "100%",
               height: "100%",
