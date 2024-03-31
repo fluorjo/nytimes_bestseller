@@ -35,6 +35,20 @@ const iconContainerVariants = {
   hovered: { translateY: `-60px`, transition: { duration: 0.2 } },
   notHovered: { translateY: 0, transition: { duration: 0.2 } },
 };
+const bookVariants = {
+  flipped: {
+    rotateY: -180,
+    transition: { duration: 0.8 },
+  },
+  notFlipped: {
+    rotateY: 0,
+    transition: { duration: 0.4 },
+  },
+};
+const descriptionVariants = {
+  visible: { opacity: 1, transition: { duration: 0.1 } },
+  hidden: { opacity: 0, transition: { duration: 0.1 } },
+};
 
 export default function Book({
   title,
@@ -99,10 +113,8 @@ export default function Book({
           <motion.img
             src={book_image}
             alt={title}
-            initial={{ opacity: 1 }}
-            animate={{ rotateY: isFlipped ? -180 : 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            variants={bookVariants}
+            animate={isFlipped ? "flipped" : "notFlipped"}
             style={{
               width: "100%",
               height: "100%",
@@ -119,9 +131,8 @@ export default function Book({
             }}
           />
           <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: isFlipped ? 1 : 0 }}
-            transition={{ duration: 0.1 }}
+          variants={descriptionVariants}
+          animate={isFlipped ? "visible" : "hidden"}
             style={{
               width: "100%",
               height: "100%",
