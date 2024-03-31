@@ -67,7 +67,7 @@ export default function Book({
           height: `378px`,
           // backgroundColor: "blue",
           boxShadow:
-            " 5px 8px 3px 1px rgb(255, 255, 255), 5px 8px 3px 2px rgb(235, 235, 235), 5px 8px 3px 3px rgb(215, 215, 215), 5px 8px 3px 4px rgb(195, 195, 195), 5px 8px 3px 5px rgb(175, 175, 175), 5px 8px 3px 6px rgb(155, 155, 155)",
+            " 9px 8px 4px 1px rgb(255, 255, 255), 9px 8px 4px 2px rgb(205, 205, 205), 9px 8px 4px 3px rgb(155, 155, 155), 9px 8px 4px 4px rgb(105, 105, 105), 9px 8px 4px 5px rgb(55, 55, 55), 9px 8px 4px 6px rgb(0, 0, 0)",
           
         }}
       >
