@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { GiSevenPointedStar } from "react-icons/gi";
 import styles from "../styles/book.module.css";
 
@@ -33,27 +33,7 @@ export default function Book({
     window.location.href = amazon_product_url;
   };
   const [isFlipped, setIsFlipped] = useState(false);
-  const ref = useRef(null);
 
-  const spring = {
-    type: "spring",
-    stiffness: 300,
-    damping: 40,
-  };
-
-  const flipVariants = {
-    initial: {
-      opacity: 1
-    },
-    animate: { 
-      rotateY: isFlipped ? -180 : 0,
-      transition: { duration: 1 }
-    },
-    exit: {
-      transition: { duration: 0.2 }
-    }
-  }
-  
   return (
     <div
       className={styles.bookContainer}
@@ -61,7 +41,6 @@ export default function Book({
       onMouseLeave={() => setIsFlipped(false)}
     >
       <motion.div
-        transition={spring}
         style={{
           position: "relative",
           top: "px",
@@ -72,7 +51,6 @@ export default function Book({
           // backgroundColor: "blue",
           boxShadow:
             " 9px 8px 4px 1px rgb(255, 255, 255), 9px 8px 4px 2px rgb(205, 205, 205), 9px 8px 4px 3px rgb(155, 155, 155), 9px 8px 4px 4px rgb(105, 105, 105), 9px 8px 4px 5px rgb(55, 55, 55), 9px 8px 4px 6px rgb(0, 0, 0)",
-          
         }}
       >
         <div
@@ -81,12 +59,11 @@ export default function Book({
             transformStyle: "preserve-3d",
             width: "100%",
             height: "100%",
-
+            backgroundColor: "#ededed",
             boxShadow:
               "inset 20px 0px 21px -10px rgba(255,255,255,.1), inset 13px 0px 21px -10px rgba(0,0,0,.3)",
           }}
         >
-          {" "}
           <div className={styles.iconContainer}>
             <GiSevenPointedStar stroke="black" strokeWidth="20" size={45} />
             <span className={styles.iconText}>{rank}</span>
@@ -94,8 +71,10 @@ export default function Book({
           <motion.img
             src={book_image}
             alt={title}
+            initial={{ opacity: 1 }}
             animate={{ rotateY: isFlipped ? -180 : 0 }}
-            transition={{duration:0.8} }
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
             style={{
               width: "100%",
               height: "100%",
@@ -108,12 +87,13 @@ export default function Book({
               borderBottomLeftRadius: "3.5%",
               borderBottomRightRadius: "0%",
               transformOrigin: "left center",
+              backgroundColor: "#ededed",
             }}
           />
           <motion.div
-            // initial={{ rotateY: 180 }}
-            // animate={{ rotateY: isFlipped ? 0 : 0 }}
-            // transition={spring}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: isFlipped ? 1 : 0 }}
+            transition={{ duration: 0.1 }}
             style={{
               width: "100%",
               height: "100%",
@@ -124,14 +104,13 @@ export default function Book({
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              fontSize:"26px",
-              lineHeight:"32px",
+              fontSize: "26px",
+              lineHeight: "32px",
               borderTopLeftRadius: "3.5%",
               borderTopRightRadius: "0%",
               borderBottomLeftRadius: "3.5%",
               borderBottomRightRadius: "0%",
-              padding:"0px 0px 5px 5px"
-              
+              padding: "0px 0px 5px 5px",
             }}
           >
             {description}
