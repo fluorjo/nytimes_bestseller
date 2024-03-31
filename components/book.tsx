@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { GiSevenPointedStar } from "react-icons/gi";
 import styles from "../styles/book.module.css";
+import StarIcon from "./Icons/star";
 
 interface IBookProps {
   title: string;
@@ -64,19 +64,23 @@ export default function Book({
               "inset 20px 0px 21px -10px rgba(255,255,255,.1), inset 13px 0px 21px -10px rgba(0,0,0,.3)",
           }}
         >
-          <motion.div
-            className={styles.iconContainer}
-            initial={{ opacity: 1 }}
-            animate={{ translateY: isFlipped ? `-60px` :  0}}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2}}
-            style={{
-              zIndex: !isFlipped ? 2 : 2,
-            }}
-          >
-            <GiSevenPointedStar stroke="black" strokeWidth="20" size={45} />
-            <span className={styles.iconText}>{rank}</span>
-          </motion.div>
+          {rank === 1 ? (
+            <motion.div
+              className={styles.iconContainer}
+              initial={{ opacity: 1 }}
+              animate={{ translateY: isFlipped ? `-60px` : 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              style={{
+                zIndex: !isFlipped ? 2 : 2,
+              }}
+            >
+              <StarIcon />
+              <span className={styles.iconText}>{rank}</span>
+            </motion.div>
+          ) : (
+            <></>
+          )}
           <motion.img
             src={book_image}
             alt={title}
