@@ -120,8 +120,8 @@
 }
 
 .shopList {
-  width: 105%;
-  background-color: var(--sand);
+  width: 100%;
+  background-color: var(--thick-grey);
   height: 200px;
   z-index: 10;
   color: white;

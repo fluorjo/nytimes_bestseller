@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "../styles/book.module.css";
 import { BronzeIcon, DefaultIcon, GoldIcon, SilverIcon } from "./Icons/star";
@@ -154,11 +154,17 @@ export default function Book({
         <h2>{title}</h2>
         <h3>by {author}</h3>
         <button className={styles.BuyButton} onClick={handleButtonClick}>
-          {" "}
           {buttonClicked ? "Select Bookshop" : "Buy ↓"}
         </button>
+        <AnimatePresence>
         {buttonClicked && (
-          <div className={styles.shopList}>
+           <motion.div
+           initial={{ y: -30, opacity: 0.5 }} // 초기 상태: -100px에서 시작하며 불투명도는 0
+           animate={{ y: 0, opacity: 1 }} // 최종 상태: 원래 위치로 이동하며 불투명도는 1
+           exit={{ y: -30, opacity: 0.0 }} // 컴포넌트가 사라질 때의 상태
+           transition={{ duration: 0.5 }} // 애니메이션 지속 시간 설정
+           className={styles.shopList}
+           >
             <ul>
               {buy_links?.map((link, index) => (
                 <li key={index}>
@@ -168,8 +174,9 @@ export default function Book({
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         )}
+        </AnimatePresence>
       </div>
     </div>
   );
