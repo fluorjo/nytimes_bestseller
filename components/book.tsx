@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "../styles/book.module.css";
-import {GoldIcon,SilverIcon,BronzeIcon,DefaultIcon} from "./Icons/star";
+import { BronzeIcon, DefaultIcon, GoldIcon, SilverIcon } from "./Icons/star";
 
 interface IBookProps {
   title: string;
@@ -20,11 +19,11 @@ function getStarIcon(rank) {
     case 1:
       return <GoldIcon />;
     case 2:
-      return <SilverIcon/>;
+      return <SilverIcon />;
     case 3:
-      return <BronzeIcon/>;
+      return <BronzeIcon />;
     default:
-      return <DefaultIcon/>;
+      return <DefaultIcon />;
   }
 }
 
@@ -46,7 +45,10 @@ export default function Book({
   };
   const [isFlipped, setIsFlipped] = useState(false);
   const StarIcon = getStarIcon(rank);
-
+  const [buttonClicked, setButtonClicked] = useState(false);
+  const handleButtonClick = () => {
+    setButtonClicked(!buttonClicked);
+  };
   return (
     <div
       className={styles.bookContainer}
@@ -143,7 +145,20 @@ export default function Book({
       <div className={styles.bookInfoBox}>
         <h2>{title}</h2>
         <h3>by {author}</h3>
-        <button className={styles.BuyButton} onClick={goBuyNow}>Buy ↓ </button>
+        <button className={styles.BuyButton} onClick={handleButtonClick}>
+          {" "}
+          {buttonClicked ? "Select Bookshop" : "Buy ↓"}
+        </button>
+        {buttonClicked && (
+          <div className={styles.shopList}>
+            <ul>
+              <li>항목 1</li>
+              <li>항목 2</li>
+              <li>항목 3</li>
+              {/* ...더 많은 li 항목들... */}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
