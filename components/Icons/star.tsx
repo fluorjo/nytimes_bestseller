@@ -12,9 +12,9 @@ const StarIcon = (props) => (
     {...props}
   >
     <defs>
-      <linearGradient id="bl-g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#fffd97" />
-        <stop offset="100%" stop-color="#ffc400" />
+      <linearGradient id="bl-g" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#fcc201" />
+        <stop offset="100%" stop-color="#b78628" />
       </linearGradient>
     </defs>
     <path

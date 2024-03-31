@@ -15,6 +15,18 @@ interface IBookProps {
   rank: number;
   description: string;
 }
+function getStarIcon(rank) {
+  switch (rank) {
+    case 1:
+      return <StarIcon />;
+    case 2:
+      return null;
+    case 3:
+      return null;
+    default:
+      return null;
+  }
+}
 
 export default function Book({
   title,
@@ -33,6 +45,7 @@ export default function Book({
     window.location.href = amazon_product_url;
   };
   const [isFlipped, setIsFlipped] = useState(false);
+  const StarIcon = getStarIcon(rank);
 
   return (
     <div
@@ -64,23 +77,20 @@ export default function Book({
               "inset 20px 0px 21px -10px rgba(255,255,255,.1), inset 13px 0px 21px -10px rgba(0,0,0,.3)",
           }}
         >
-          {rank === 1 ? (
-            <motion.div
-              className={styles.iconContainer}
-              initial={{ opacity: 1 }}
-              animate={{ translateY: isFlipped ? `-60px` : 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              style={{
-                zIndex: !isFlipped ? 2 : 2,
-              }}
-            >
-              <StarIcon />
-              <span className={styles.iconText}>{rank}</span>
-            </motion.div>
-          ) : (
-            <></>
-          )}
+          <motion.div
+            className={styles.iconContainer}
+            initial={{ opacity: 1 }}
+            animate={{ translateY: isFlipped ? `-60px` : 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            style={{
+              zIndex: !isFlipped ? 2 : 2,
+            }}
+          >
+            {StarIcon}
+            <span className={styles.iconText}>{rank}</span>
+          </motion.div>
+
           <motion.img
             src={book_image}
             alt={title}
