@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import styles from "../styles/book.module.css";
 import { BronzeIcon, DefaultIcon, GoldIcon, SilverIcon } from "./Icons/star";
-
+interface IBuyLink {
+  name: string;
+  url: string;
+}
 interface IBookProps {
   title: string;
   primary_isbn13: number;
@@ -13,6 +16,7 @@ interface IBookProps {
   amazon_product_url: string;
   rank: number;
   description: string;
+  buy_links: IBuyLink[]; 
 }
 function getStarIcon(rank) {
   switch (rank) {
@@ -35,6 +39,7 @@ export default function Book({
   amazon_product_url,
   rank,
   description,
+  buy_links,
 }: IBookProps) {
   // const router = useRouter();
   // const goDetail = () => {
@@ -151,12 +156,15 @@ export default function Book({
         </button>
         {buttonClicked && (
           <div className={styles.shopList}>
-            <ul>
-              <li>항목 1</li>
-              <li>항목 2</li>
-              <li>항목 3</li>
-              {/* ...더 많은 li 항목들... */}
-            </ul>
+         <ul>
+        {buy_links?.map((link, index) => (
+          <li key={index}>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
           </div>
         )}
       </div>
