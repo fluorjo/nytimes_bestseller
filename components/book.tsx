@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "../styles/book.module.css";
-import StarIcon from "./Icons/star";
+import {GoldIcon,SilverIcon,BronzeIcon,DefaultIcon} from "./Icons/star";
 
 interface IBookProps {
   title: string;
@@ -18,13 +18,13 @@ interface IBookProps {
 function getStarIcon(rank) {
   switch (rank) {
     case 1:
-      return <StarIcon />;
+      return <GoldIcon />;
     case 2:
-      return null;
+      return <SilverIcon/>;
     case 3:
-      return null;
+      return <BronzeIcon/>;
     default:
-      return null;
+      return <DefaultIcon/>;
   }
 }
 
