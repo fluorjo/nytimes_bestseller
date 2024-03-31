@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 .bookContainer {
   display: grid;
   grid-template-rows: 1fr auto;
@@ -8,9 +10,6 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 180px;
-  
-
-
 }
 .iconContainer {
   position: absolute;
@@ -31,6 +30,10 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
+  color: rgb(230, 230, 230);
+  font-size: 25px;
+  font-family: "Lobster", sans-serif;
+  font-weight: 900;
 }
 .bookImgBox {
   background-color: transparent;

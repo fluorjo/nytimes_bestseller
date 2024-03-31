@@ -39,7 +39,7 @@ const StarIcon = ({ gradientId, startColor, stopColor, fillColor, ...props }) =>
 export const GoldIcon = (props) => (
   <StarIcon
     gradientId="gold-gradient"
-    startColor="#fffd97"
+    startColor="#fff200"
     stopColor="#ffc400"
     fillColor="#fff6ca"
     {...props}
@@ -68,7 +68,7 @@ export const DefaultIcon = (props) => (
   <StarIcon
     gradientId="dafault-gradient"
     startColor="#89786d"
-    stopColor="#aeaeae89"
+    stopColor="#aeaeae"
     fillColor="none"
     {...props}
   />
